@@ -1,0 +1,1 @@
+Academic PDFs use embedded Times New Roman 12 pt, 24 pt line leading, justified body text and bold/italic emphasis. Page size is Letter with provisional one-inch side margins. Institution template not supplied. Original evidence remains in ../Evidence. Three authors are listed as supplied; individual/group and archive naming need instructor confirmation. No video exists yet.

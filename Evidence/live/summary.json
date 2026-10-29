@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-27T21:07:26+08:00",
+  "finished_at": "2026-10-27T21:08:29+08:00",
+  "tested": 254,
+  "responding": 14,
+  "router": {
+    "attempted": 4,
+    "received": 4,
+    "local_errors": 0,
+    "average_ms": 13.75,
+    "maximum_ms": 23.0,
+    "loss_percent": 0.0,
+    "status": "reachable"
+  },
+  "local_errors": 0,
+  "note": "Router result reuses its four discovery probes. No extra probe was sent."
+}

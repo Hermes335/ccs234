@@ -1,0 +1,32 @@
+# Installed dependencies and Python caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local build intermediates; reproducible helper scripts live in tools/
+.build/
+.chart-data-*/
+
+# Machine-specific background sync state and logs
+.sync/
+
+# Credentials, private keys and environment secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Editor and OS transient files
+.DS_Store
+Thumbs.db
+~$*
+*.tmp

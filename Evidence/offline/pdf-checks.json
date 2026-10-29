@@ -1,0 +1,35 @@
+{
+  "Documentation\\Final_Technical_Report.pdf": {
+    "pages": 11,
+    "out_of_page_text_blocks": 0,
+    "fonts": [
+      "TimesNewRomanPS-BoldMT",
+      "TimesNewRomanPS-ItalicMT",
+      "TimesNewRomanPSMT"
+    ]
+  },
+  "Documentation\\Progress_Report.pdf": {
+    "pages": 3,
+    "out_of_page_text_blocks": 0,
+    "fonts": [
+      "TimesNewRomanPS-BoldMT",
+      "TimesNewRomanPS-ItalicMT",
+      "TimesNewRomanPSMT"
+    ]
+  },
+  "Documentation\\Project_Proposal.pdf": {
+    "pages": 2,
+    "out_of_page_text_blocks": 0,
+    "fonts": [
+      "TimesNewRomanPS-BoldMT",
+      "TimesNewRomanPSMT"
+    ]
+  },
+  "Evidence\\live\\network-report.pdf": {
+    "pages": 108,
+    "out_of_page_text_blocks": 0,
+    "fonts": [
+      "Helvetica"
+    ]
+  }
+}

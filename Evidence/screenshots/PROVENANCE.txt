@@ -1,0 +1,1 @@
+Actual Tkinter window captures. 01 shows unmeasured startup. 02-05 display the saved genuine live capture from Evidence/live/network-report.json through the application worker-event presentation path. No data was invented and no additional probes were sent for screenshots. Captured with PIL ImageGrab because the Computer Use native pipe was unavailable.

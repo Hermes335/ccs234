@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "checks": [
+    "six tabs",
+    "no automatic probing",
+    "empty statistics",
+    "worker queue presentation",
+    "mocked provenance",
+    "rule display",
+    "clear state"
+  ],
+  "network_access": false
+}

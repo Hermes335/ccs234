@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-10-27T21:07:26+08:00",
+  "source": "Explicit user confirmation in this conversation on 2026-10-27",
+  "network_name": "GlobeAtHome_712d0",
+  "windows_profile": "Public; user explicitly confirmed this is the authorized home network",
+  "scope": "192.168.254.0/24",
+  "per_target_packets": 4,
+  "restrictions": "Local ICMP discovery only; no intrusive scanning or other networks",
+  "interface": {
+    "adapter": "Wi-Fi",
+    "ip": "192.168.254.118",
+    "netmask": "255.255.255.0",
+    "network": "192.168.254.0/24",
+    "hostname": "LAPTOP-PMADIN5J"
+  }
+}

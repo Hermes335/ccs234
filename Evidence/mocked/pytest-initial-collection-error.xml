@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="3" failures="0" skipped="0" tests="3" time="0.310" timestamp="2026-10-27T21:03:09.577713+08:00" hostname="LAPTOP-PMADIN5J"><testcase classname="" name="tests.test_core" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Ralph\Desktop\New folder\SourceCode\tests\test_core.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+SourceCode\tests\test_core.py:3: in &lt;module&gt;
+    from netmonitor.core import PingRun, Probe, recommendations, statistics, validate_scope, validate_target
+E   ModuleNotFoundError: No module named 'netmonitor'</error></testcase><testcase classname="" name="tests.test_network" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Ralph\Desktop\New folder\SourceCode\tests\test_network.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+SourceCode\tests\test_network.py:4: in &lt;module&gt;
+    from netmonitor.core import Probe
+E   ModuleNotFoundError: No module named 'netmonitor'</error></testcase><testcase classname="" name="tests.test_reports" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Ralph\Desktop\New folder\SourceCode\tests\test_reports.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+SourceCode\tests\test_reports.py:4: in &lt;module&gt;
+    from netmonitor.core import PingRun, Probe
+E   ModuleNotFoundError: No module named 'netmonitor'</error></testcase></testsuite></testsuites>
