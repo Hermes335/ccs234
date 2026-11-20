@@ -20,6 +20,8 @@ BODY = ParagraphStyle('Body', fontName='TNR', fontSize=12, leading=24, alignment
 HEAD = ParagraphStyle('Heading', parent=BODY, fontName='TNR-Bold', alignment=TA_LEFT, spaceAfter=10)
 CAP = ParagraphStyle('Caption', parent=BODY, fontName='TNR-Italic', spaceAfter=10)
 LEFT = ParagraphStyle('Left', parent=BODY, alignment=TA_LEFT)
+CODE = ParagraphStyle('Code', parent=BODY, fontName='Courier', fontSize=9, leading=13,
+                      alignment=TA_LEFT, leftIndent=12, rightIndent=12, spaceAfter=6)
 AUTHORS = 'Ralph Martin Chua; Herald Kent Amolong; Ivan Clyde Sagala'
 live = json.loads((BASE/'Evidence/live/network-report.json').read_text(encoding='utf-8'))
 summary = json.loads((BASE/'Evidence/live/summary.json').read_text(encoding='utf-8'))
@@ -191,7 +193,7 @@ build('Final_Technical_Report.pdf',report)
 
 proposal=[
  [heading('CCS 234 Project Proposal'), heading('Network Monitoring and Performance Analysis System'),p(AUTHORS),
-  p('Prepared 27 October 2026 for the Week 14 proposal requirement. This document states the project plan; the technical report records completed testing separately.'),
+  p('Prepared for the Week 14 proposal requirement. This document states the project plan; the technical report records completed testing separately.'),
   heading('Problem Statement'),
   p('Students and home-network users need a small tool that combines local device discovery, bounded connectivity testing and interpretable results. Separate command outputs make it difficult to preserve a consistent timestamped record. Missing responses are also easy to misinterpret as proof that a device is offline.'),
   heading('Objectives'),
@@ -210,20 +212,22 @@ proposal=[
 build('Project_Proposal.pdf',proposal)
 
 progress=[
- [heading('CCS 234 Progress Report'),p(AUTHORS),p('Status as of 27 October 2026. Prepared in advance of the Week 15 milestone.'),
-  heading('System Design and Accomplishments'),architecture(),
+ [heading('CCS 234 Progress Report'),p(AUTHORS),p('Status verified 16 November 2026 for the Week 15 milestone. The latest retained live evidence was collected on 27 October 2026.'),
+  heading('System Design'),
   p('The five required modules and six Tkinter views are implemented. The design separates OS calls from statistics, recommendation rules and file output. Network work executes in background workers, and a queue returns results to the main GUI thread. Discovery uses the actual adapter subnet, checks authorization and limits requests to four per candidate.'),
-  p('The automated suite executed 64 tests successfully after fixing an initial package-import collection error. An offline GUI integration check passed seven checks. Authorized live validation tested 254 addresses, with 14 returning echo replies. Raw records are stored separately from mocked test evidence.')],
- [heading('Actual Application Screenshot'),shot('03-statistics-recorded-live.png',468),
-  p('The actual application displays saved genuine measurements from the authorized home-network capture. This screenshot is a replay of recorded results, not a new live test.',CAP),
-  p('The router returned four responses with latencies of '+samples+' ms. The mean was 13.75 ms, the maximum was 23 ms and packet loss was 0%. These values describe only the bounded sample. ICMP discovery does not guarantee a complete inventory and does not measure application throughput or vulnerability exposure.')],
- [heading('Sample Code and Remaining Tasks'),
-  p('The following excerpt from core.py selects measured reply latencies and counts outcomes whose send attempt is not classified as a local error. It is actual implementation code.'),
-  p('replies = [p.latency_ms for p in probes<br/>&nbsp;&nbsp;&nbsp;&nbsp;if p.status == "reply"]<br/>attempted = sum(p.status != "error" for p in probes)',LEFT),
-  p('The statistics function returns unavailable latency when no replies exist. Packet loss excludes local errors with unknown send status. The rule module reports configured thresholds explicitly and separates connectivity findings from general firewall and password reminders.'),
-  heading('Remaining Tasks'),
-  p('The presenters must record and review the real formal-attire video. The referenced institutional page template must be obtained or the provisional formatting accepted by the instructor. The three supplied names must be reconciled with the individual-project instruction and final archive naming convention. The course deadline conflict also needs clarification.'),
-  p('Before submission, the student must review private information in screenshots and reports, verify the installation on the demonstration machine, and approve the final package. The technical documentation remains outside the ZIP, and no Teams submission has been made. Future technical work may add IPv6 and repeated sampling after the current required scope is accepted.')]
+  p('The GUI validates scope, starts bounded work in a worker, and renders results after a queue event. Reports combine interfaces, discovery, ping runs, statistics, recommendations and limitations into TXT, JSON or PDF output.')],
+ [heading('Screenshots'), 
+  Table([[shot('02-discovery-recorded-live.png',210), shot('03-statistics-recorded-live.png',210)]],
+        colWidths=[234,234], style=TableStyle([('VALIGN',(0,0),(-1,-1),'TOP')])),
+  p('Figure 1. Actual discovery and router-statistics screens displaying the retained genuine live capture.',CAP),
+  p('The router returned four responses with latencies of '+samples+' ms: 13.75 ms mean, 23 ms maximum and 0% loss. The technical report and presentation guide also retain probe and recommendation captures.',CAP),
+  ],
+ [heading('Sample Code'),
+  p('Excerpt 1 — <i>network.py</i>:<br/>network = validate_scope(cidr)<br/>if local_network is None or not network.subnet_of(ipaddress.IPv4Network(local_network)):<br/>&nbsp;&nbsp;&nbsp;&nbsp;raise PermissionError("Discovery must stay inside the selected local adapter subnet.")',CODE),
+  p('Excerpt 2 — <i>core.py</i>:<br/>replies = [p.latency_ms for p in probes if p.status == "reply"]<br/>attempted = sum(p.status != "error" for p in probes)',CODE),
+ heading('Accomplishments'), p('All five features are implemented; automated, offline, and authorized live evidence is retained.'),
+ heading('Remaining Tasks'),
+  p('Record and review the real formal-attire video; obtain or approve the institutional template; resolve the individual-project versus three-author conflict and the date discrepancy; review private identifiers; verify the demonstration installation; rehearse; and personally approve the final package. No Teams submission has been made.')],
 ]
 build('Progress_Report.pdf',progress)
 (OUT/'DOCUMENTATION_NOTES.md').write_text('Academic PDFs use embedded Times New Roman 12 pt, 24 pt line leading, justified body text and bold/italic emphasis. Page size is Letter with provisional one-inch side margins. Institution template not supplied. Original evidence remains in ../Evidence. Three authors are listed as supplied; individual/group and archive naming need instructor confirmation. No video exists yet.\n', encoding='utf-8')
